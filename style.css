@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+body {
+    background: url("./assets/img/main.jpg") center/cover no-repeat;
+    min-height: 100vh;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    /* font-size en REM ou VW */
+    font-size: 5vw;
+    text-shadow: 6px 4px 9px rgba(0, 0, 0, 0.71);
+    color: rgba(236, 57, 159, 0.89);
+    font-family: 'Tilt Prism', sans-serif;
+}
+
+main {
+    min-height: 500px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.31);
+    /* Center une boite */
+    margin: 0 auto;
+    border: 2px solid deepskyblue;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0 0 20px 1px #00ffb4;
+    padding: 15px;
+}
+
+h2 {
+    margin: 0;
+}
+
+/* FLEXBOX */
+
+.flexbox, .grid, .absolute{
+    border: 2px dashed #EC399FE2;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 20px;
+    min-height: 100px;
+}
+
+.flexbox ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flexbox li{
+    list-style: none;
+    height: 160px;
+    width: 160px;
+    margin: 10px;
+    background: rgba(7, 154, 173, 0.51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* FINFLEXBOX */
+
+/* GRID */
+.grid img{
+    width: 80%;
+    margin: 20px auto;
+    display: block;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+"i1 i2"
+"ta ta"
+"vi bt";
+}
+
+input, textarea{
+    margin: 5px;
+    border: 1px solid darkcyan;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+textarea {
+    grid-area: ta;
+    resize: none;
+    height: 40px;
+}
+
+#btn-submit{
+    grid-area: bt;
+    cursor: pointer;
+    transition: 0.2s;
+    background: deepskyblue;
+}
+
+#btn-submit:hover {
+    background: darkcyan;
+    color: rgba(250, 170, 213, 0.89);
+}
+/* FINGRID */
+
+/* RELATIVE ABSOLUTE */
+.absolute{
+    position: relative;
+}
+#circle1{
+    height: 80px;
+    width: 80px;
+    background: #670a7c;
+    position: absolute;
+    border-radius: 150px;
+    top: 0;
+    right: 0;
+}
+
+#circle2{
+    height: 40px;
+    width: 40px;
+    border-radius: 150px;
+    position: absolute;
+    background: coral;
+    left: 50%;
+    transform: translatex(-50%);
+    top: 50px;
+}
+
+/* FINRELATIVE FINABSOLUTE*/
+
+
+/*RESPONSIVE*/
+@media screen and (max-width: 900px) {
+    .grid-container {
+        display: block;
+    }
+
+    .grid-container img{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 620px){
+    .flexbox ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+    "i1"
+    "i2"
+    "ta"
+    "bt";
+    }
+    input, textarea{
+        font-size: 0.8rem;
+    }
+}
+
+
+/*FINRESPONSIVE*/
